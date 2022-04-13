@@ -32,7 +32,7 @@ def checkdht():
     for i in range(10):
         try:
             h, t =callback4()
-            message=str(h)+":"+str(t)
+            message=str(h)+","+str(t)
             channel.basic_publish(exchange='logs', routing_key='', body= message)
             print ("sent %r" %message) 
 
