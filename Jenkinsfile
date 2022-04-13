@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('GitClone') {
             steps {
-                git branch: 'main', url: 'https://github.com/HaleemaEssa/first_jenkins_project.git'
+                git branch: 'main', url: 'https://github.com/HaleemaEssa/jenkins-RPI-DHT11-sensor.git'
             }
         }
     stage('Createdockerimage on RPI') {
