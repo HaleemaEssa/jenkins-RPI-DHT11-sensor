@@ -11,7 +11,7 @@ pipeline {
         }
     stage('Createdockerimage on RPI') {
             steps {
-                sh 'docker build -t haleema/docker-rpi:latest .'
+                sh 'docker build -t haleema/docker-rpi-dht:latest .'
             }
         }     
     stage('Login to Dockerhub') {
@@ -23,13 +23,13 @@ pipeline {
     stage('runimage') {
          
             steps {
-                sh 'docker run --privileged -t haleema/docker-rpi'
+                sh 'docker run --privileged -t haleema/docker-rpi-dht'
             }
          }    
     
     stage('pushimage to Dockerhub') {
             steps {
-                sh 'docker push haleema/docker-rpi:latest'
+                sh 'docker push haleema/docker-rpi-dht:latest'
             }
         }
          
